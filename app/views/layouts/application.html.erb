@@ -5,10 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Dashboard - Ace Admin</title>
+
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
-<body>
+<body class="no-skin">
+  <%= render 'layouts/navbar' %>
+  <div class="main-container" id="main-container">
+    <script type="text/javascript">
+      try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+    <%= render 'layouts/sidebar' %>
+    <%= yield %>
 
-<%= yield %>
-
+    <%= render 'layouts/footer' %>
+      <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+      </a>
+  </div><!-- /.main-container -->
 </body>
 </html>

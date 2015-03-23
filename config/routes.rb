@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :models
+  namespace :admin do
+  get 'dashboard/index'
+  end
+
+  devise_for :users
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
